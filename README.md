@@ -1,13 +1,13 @@
 # Calibrate Those Confident Logits – Reinforcement Learning Task
 
-## 🎯 Objective
+##  Objective
 This RL task teaches a practical ML engineering skill — **probability calibration**.  
 Given over-confident classification logits, the goal is to learn a calibrator on **validation data** and apply it to **test data**, returning valid probabilities.  
 The task models a realistic ML workflow where models must remain reliable under mild distribution shift.
 
 ---
 
-## 🧠 Task Description
+##  Task Description
 You are provided with:
 - `logits_val [Nv, K]` – validation logits  
 - `y_val [Nv]` – validation labels  
