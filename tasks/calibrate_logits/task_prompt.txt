@@ -1,0 +1,28 @@
+
+---
+
+### `task_prompt.txt`
+```text
+You are given numpy arrays: logits_val [Nv,K], y_val [Nv], logits_test [Nt,K].
+Logits are intentionally over-confident and vary in severity; there is mild
+seed-dependent distribution shift.
+
+Implement:
+
+def solve(logits_val: np.ndarray, y_val: np.ndarray, logits_test: np.ndarray) -> np.ndarray:
+    """
+    Fit a calibrator ONLY on (logits_val, y_val) and apply to logits_test.
+    Return calibrated probabilities [Nt,K], non-negative, each row sums to 1.
+    Any correct calibration method is allowed (temperature scaling, histogram
+    binning, Platt, isotonic, vector/bias scaling, Dirichlet, etc.).
+    Use only numpy; do not read files; keep it deterministic.
+    """
+
+Your solution is graded on TEST:
+- NLL must improve by at least REQ_NLL_IMP (grader prints exact value).
+- ECE must improve by at least REQ_ECE_IMP.
+- Mean max-confidence must drop by at least REQ_CONF_RED.
+- Accuracy must not drop by more than MAX_ACC_DROP.
+- Output must be valid probabilities (non-negative; rows sum to 1).
+
+Do NOT infer test labels. Multiple correct approaches are acceptable.
